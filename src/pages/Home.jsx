@@ -10,6 +10,7 @@ import 'swiper/css/effect-fade';
 import API_BASE_URL from '../creds/api';
 import { fetchAllDonors } from '../creds/donorService';
 import { toast } from '../components/Toast';
+import WelcomeModal from '../components/WelcomeModal';
 
 const DEFAULT_DONORS = [
   { id: 1, name: 'Asim Raza', bloodGroup: 'O+', address: 'Sillanwali Road, Hussain Chowk, Sargodha', phone: '0300 - 1234567', lastDonationDate: '2026-08-10', isAvailable: true },
@@ -188,6 +189,7 @@ export default function Home() {
 
   return (
     <div className="w-full min-h-screen bg-[#fafbfc] font-sans flex flex-col pb-20">
+      <WelcomeModal />
 
       {/* HERO SECTION */}
       <section className="relative w-full pt-16 pb-12 px-4 overflow-hidden bg-gradient-to-b from-[#fff0f3]/60 to-transparent">
