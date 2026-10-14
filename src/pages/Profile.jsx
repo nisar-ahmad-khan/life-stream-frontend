@@ -240,7 +240,7 @@ export default function Account() {
     return (
       <div className="flex min-h-[70vh] items-center justify-center bg-[#fafbfc] text-slate-600 font-bold text-sm">
         <div className="flex items-center gap-3">
-          <div className="w-5 h-5 rounded-full border-2 border-[#e63946] border-t-transparent animate-spin"></div>
+          <div className="w-5 h-5 rounded-full border-2 border-[#A61818] border-t-transparent animate-spin"></div>
           <span>Loading Profile...</span>
         </div>
       </div>
@@ -257,14 +257,14 @@ export default function Account() {
             <Link to="/" className="w-10 h-10 rounded-full bg-slate-50 hover:bg-slate-100 text-slate-500 flex items-center justify-center transition-colors">
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M10 19l-7-7m0 0l7-7m-7 7h18" /></svg>
             </Link>
-            <h1 className="text-xl font-black text-[#0f172a] tracking-tight">
-              Donor <span className="text-[#e63946]">Profile</span>
+            <h1 className="text-xl font-black text-[#26282C] tracking-tight">
+              Donor <span className="text-[#A61818]">Profile</span>
             </h1>
           </div>
 
           <button
             onClick={() => { setIsEditing(!isEditing); setSaveStatus({ message: '', isError: false }); }}
-            className={`px-5 py-2.5 rounded-full font-bold text-sm transition-all flex items-center gap-2 ${isEditing ? 'bg-slate-100 text-slate-600 hover:bg-slate-200' : 'bg-red-50 text-[#e63946] hover:bg-[#e63946] hover:text-white'
+            className={`px-5 py-2.5 rounded-full font-bold text-sm transition-all flex items-center gap-2 ${isEditing ? 'bg-slate-100 text-slate-600 hover:bg-slate-200' : 'bg-red-50 text-[#A61818] hover:bg-[#A61818] hover:text-white'
               }`}
           >
             <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" /></svg>
@@ -292,11 +292,11 @@ export default function Account() {
             <div className="bg-white p-8 rounded-[32px] shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-slate-100 flex flex-col items-center text-center relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-slate-50 to-white"></div>
 
-              <div className="w-28 h-28 rounded-full bg-gradient-to-br from-[#1d3557] to-[#0f172a] text-white flex items-center justify-center text-4xl font-black shadow-lg relative z-10 border-4 border-white mb-4">
+              <div className="w-28 h-28 rounded-full bg-gradient-to-br from-[#3A3D42] to-[#26282C] text-white flex items-center justify-center text-4xl font-black shadow-lg relative z-10 border-4 border-white mb-4">
                 {user.bloodGroup || '?'}
               </div>
 
-              <h2 className="text-2xl font-black text-[#0f172a] tracking-tight relative z-10">{user.fullName || 'Anonymous User'}</h2>
+              <h2 className="text-2xl font-black text-[#26282C] tracking-tight relative z-10">{user.fullName || 'Anonymous User'}</h2>
 
               <div className="flex flex-col gap-2 mt-4 w-full relative z-10">
                 <div className="flex items-center justify-center gap-2 text-sm text-slate-500 font-medium bg-slate-50 py-2 rounded-xl">
@@ -319,7 +319,7 @@ export default function Account() {
             </div>
 
             {/* Premium Dark Cooldown Widget */}
-            <div className="bg-[#0f172a] text-white p-8 rounded-[32px] shadow-[0_10px_30px_rgba(15,23,42,0.15)] relative overflow-hidden group">
+            <div className="bg-[#26282C] text-white p-8 rounded-[32px] shadow-[0_10px_30px_rgba(38,40,44,0.15)] relative overflow-hidden group">
               {/* Background Accent */}
               <div className="absolute right-0 bottom-0 opacity-5 pointer-events-none transition-transform duration-700 group-hover:scale-110">
                 <svg className="w-48 h-48" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" /></svg>
@@ -382,8 +382,8 @@ export default function Account() {
 
             <div className="bg-white p-8 rounded-[32px] shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-slate-100">
               <div className="mb-8">
-                <h3 className="text-[11px] font-black text-[#e63946] uppercase tracking-widest mb-2">Personal Information</h3>
-                <h2 className="text-2xl font-black text-[#0f172a]">{isEditing ? 'Update Your Details' : 'Profile Overview'}</h2>
+                <h3 className="text-[11px] font-black text-[#A61818] uppercase tracking-widest mb-2">Personal Information</h3>
+                <h2 className="text-2xl font-black text-[#26282C]">{isEditing ? 'Update Your Details' : 'Profile Overview'}</h2>
               </div>
 
               {!isEditing ? (
@@ -404,7 +404,7 @@ export default function Account() {
                     </div>
                     <div className="p-4 rounded-2xl bg-red-50 border border-red-100">
                       <span className="block text-[10px] font-bold text-red-400 uppercase tracking-wider mb-1">Blood Group</span>
-                      <span className="font-black text-[#e63946] text-lg">{user.bloodGroup || '—'}</span>
+                      <span className="font-black text-[#A61818] text-lg">{user.bloodGroup || '—'}</span>
                     </div>
                   </div>
 
@@ -419,36 +419,36 @@ export default function Account() {
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
                       <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">Full Name</label>
-                      <input type="text" name="fullName" value={formData.fullName} onChange={handleInputChange} required className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#e63946]/20 focus:border-[#e63946] transition-all" />
+                      <input type="text" name="fullName" value={formData.fullName} onChange={handleInputChange} required className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#A61818]/20 focus:border-[#A61818] transition-all" />
                     </div>
                     <div>
                       <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">Phone Number</label>
-                      <input type="text" name="phoneNumber" value={formData.phoneNumber} onChange={handleInputChange} required className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#e63946]/20 focus:border-[#e63946] transition-all" />
+                      <input type="text" name="phoneNumber" value={formData.phoneNumber} onChange={handleInputChange} required className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#A61818]/20 focus:border-[#A61818] transition-all" />
                     </div>
                     <div>
                       <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">Email Address</label>
-                      <input type="email" name="email" value={formData.email} onChange={handleInputChange} className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#e63946]/20 focus:border-[#e63946] transition-all" />
+                      <input type="email" name="email" value={formData.email} onChange={handleInputChange} className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#A61818]/20 focus:border-[#A61818] transition-all" />
                     </div>
                     <div>
                       <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">Blood Group</label>
-                      <select name="bloodGroup" value={formData.bloodGroup} onChange={handleInputChange} className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#e63946]/20 focus:border-[#e63946] transition-all appearance-none cursor-pointer">
+                      <select name="bloodGroup" value={formData.bloodGroup} onChange={handleInputChange} className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#A61818]/20 focus:border-[#A61818] transition-all appearance-none cursor-pointer">
                         <option value="">Select Group</option>
                         {['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-'].map(bg => <option key={bg} value={bg}>{bg}</option>)}
                       </select>
                     </div>
                     <div className="sm:col-span-2">
                       <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">Address / Location</label>
-                      <input type="text" name="address" value={formData.address} onChange={handleInputChange} className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#e63946]/20 focus:border-[#e63946] transition-all" />
+                      <input type="text" name="address" value={formData.address} onChange={handleInputChange} className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#A61818]/20 focus:border-[#A61818] transition-all" />
                     </div>
                     <div className="sm:col-span-2">
                       <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">Last Donated Date</label>
-                      <input type="date" name="lastDonationDate" value={formData.lastDonationDate} onChange={handleInputChange} className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#e63946]/20 focus:border-[#e63946] transition-all cursor-pointer" />
+                      <input type="date" name="lastDonationDate" value={formData.lastDonationDate} onChange={handleInputChange} className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#A61818]/20 focus:border-[#A61818] transition-all cursor-pointer" />
                     </div>
                   </div>
 
                   <div className="pt-6 border-t border-slate-100">
                     <label className="flex items-center gap-3 p-4 border border-slate-200 rounded-2xl cursor-pointer hover:bg-slate-50 transition-colors">
-                      <input type="checkbox" name="isAvailable" checked={formData.isAvailable} onChange={handleInputChange} className="w-5 h-5 rounded border-slate-300 text-[#e63946] focus:ring-[#e63946]" />
+                      <input type="checkbox" name="isAvailable" checked={formData.isAvailable} onChange={handleInputChange} className="w-5 h-5 rounded border-slate-300 text-[#A61818] focus:ring-[#A61818]" />
                       <div>
                         <div className="font-bold text-slate-800 text-sm">Available for Emergency Donations</div>
                         <div className="text-xs text-slate-500 font-medium">Allow people to contact you when they need blood urgently.</div>
@@ -465,7 +465,7 @@ export default function Account() {
                         { name: 'hiv', label: 'HIV / AIDS' }
                       ].map(test => (
                         <label key={test.name} className="flex items-center gap-3 p-3.5 border border-slate-200 rounded-xl cursor-pointer hover:bg-slate-50 transition-colors">
-                          <input type="checkbox" name={test.name} checked={formData.healthStatus[test.name] || false} onChange={handleInputChange} className="w-4 h-4 rounded border-slate-300 text-[#e63946] focus:ring-[#e63946]" />
+                          <input type="checkbox" name={test.name} checked={formData.healthStatus[test.name] || false} onChange={handleInputChange} className="w-4 h-4 rounded border-slate-300 text-[#A61818] focus:ring-[#A61818]" />
                           <span className="font-bold text-slate-700 text-xs">{test.label} Negative</span>
                         </label>
                       ))}
@@ -473,7 +473,7 @@ export default function Account() {
                   </div>
 
                   <div className="flex gap-4 pt-6">
-                    <button type="submit" className="flex-1 py-4 bg-[#e63946] hover:bg-[#d62828] text-white font-bold rounded-full text-sm shadow-md shadow-red-500/20 transition-colors">
+                    <button type="submit" className="flex-1 py-4 bg-[#A61818] hover:bg-[#970707] text-white font-bold rounded-full text-sm shadow-md shadow-[#A61818]/20 transition-colors">
                       Save Profile Changes
                     </button>
                     <button type="button" onClick={() => setIsEditing(false)} className="px-8 py-4 bg-slate-100 hover:bg-slate-200 text-slate-600 font-bold rounded-full text-sm transition-colors">
@@ -488,8 +488,8 @@ export default function Account() {
             {!isEditing && (
               <div className="bg-white p-8 rounded-[32px] shadow-[0_4px_20px_rgb(0,0,0,0.03)] border border-slate-100">
                 <div className="mb-6">
-                  <h3 className="text-[11px] font-black text-[#e63946] uppercase tracking-widest mb-2">Medical Verification</h3>
-                  <h2 className="text-xl font-black text-[#0f172a]">Health Screening Records</h2>
+                  <h3 className="text-[11px] font-black text-[#A61818] uppercase tracking-widest mb-2">Medical Verification</h3>
+                  <h2 className="text-xl font-black text-[#26282C]">Health Screening Records</h2>
                   <p className="text-sm text-slate-500 mt-1 font-medium">Self-declared medical safety clearances for recipient protection.</p>
                 </div>
 
@@ -536,7 +536,7 @@ export default function Account() {
               <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
             </div>
             <div>
-              <h3 className="font-black text-[#0f172a] text-xl tracking-tight">Delete Account?</h3>
+              <h3 className="font-black text-[#26282C] text-xl tracking-tight">Delete Account?</h3>
               <p className="text-sm text-slate-500 font-medium mt-2 leading-relaxed">
                 This action is permanent. It will completely remove your donor record and health clearances from the system.
               </p>
@@ -545,7 +545,7 @@ export default function Account() {
               <button onClick={() => setShowDeleteModal(false)} disabled={isDeleting} className="flex-1 py-3.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold rounded-xl text-sm transition-colors">
                 Cancel
               </button>
-              <button onClick={handleDeleteAccount} disabled={isDeleting} className="flex-1 py-3.5 bg-[#e63946] hover:bg-[#d62828] text-white font-bold rounded-xl text-sm transition-colors shadow-md shadow-red-500/20">
+              <button onClick={handleDeleteAccount} disabled={isDeleting} className="flex-1 py-3.5 bg-[#A61818] hover:bg-[#970707] text-white font-bold rounded-xl text-sm transition-colors shadow-md shadow-[#A61818]/20">
                 {isDeleting ? 'Deleting...' : 'Delete'}
               </button>
             </div>

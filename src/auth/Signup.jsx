@@ -149,55 +149,55 @@ export default function Registration() {
     <div className="min-h-screen w-full bg-[#fafbfc] flex flex-col justify-center items-center p-4 sm:p-6 lg:p-10 font-sans relative overflow-hidden">
 
       {/* Background Ambience & Floating Life-Saving Particles */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[520px] bg-gradient-to-b from-[#fff0f3] via-[#ffe5e9]/50 to-transparent rounded-full blur-3xl pointer-events-none"></div>
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-[520px] bg-gradient-to-b from-[#fef2f2] via-[#fee2e2]/40 to-transparent rounded-full blur-3xl pointer-events-none"></div>
 
       {/* Floating decorative elements */}
-      <div className="absolute top-16 left-[8%] sm:left-[14%] w-16 h-16 rounded-full bg-red-100/60 blur-xl pointer-events-none animate-float"></div>
-      <div className="absolute top-36 right-[8%] sm:right-[15%] w-20 h-20 rounded-full bg-rose-200/50 blur-xl pointer-events-none animate-float-reverse"></div>
+      <div className="absolute top-16 left-[8%] sm:left-[14%] w-16 h-16 rounded-full bg-red-100/50 blur-xl pointer-events-none animate-float"></div>
+      <div className="absolute top-36 right-[8%] sm:right-[15%] w-20 h-20 rounded-full bg-red-200/40 blur-xl pointer-events-none animate-float-reverse"></div>
       <div className="absolute bottom-24 left-[10%] w-14 h-14 rounded-full bg-red-50 blur-lg pointer-events-none animate-float"></div>
 
       {/* Ambient Heartbeat / Life Pulse SVG Line */}
-      <div className="absolute top-8 w-full max-w-5xl opacity-[0.07] pointer-events-none flex justify-center overflow-hidden">
+      <div className="absolute top-8 w-full max-w-5xl opacity-[0.06] pointer-events-none flex justify-center overflow-hidden">
         <svg className="w-full h-24" viewBox="0 0 900 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0 50 L200 50 L220 50 L235 20 L250 85 L265 10 L280 65 L295 50 L310 50 L500 50 L520 50 L535 20 L550 85 L565 10 L580 65 L595 50 L900 50" stroke="#e63946" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+          <path d="M0 50 L200 50 L220 50 L235 20 L250 85 L265 10 L280 65 L295 50 L310 50 L500 50 L520 50 L535 20 L550 85 L565 10 L580 65 L595 50 L900 50" stroke="#A61818" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
       </div>
 
-      <div className="w-full max-w-3xl bg-white/95 backdrop-blur-sm rounded-[40px] shadow-[0_12px_40px_rgb(0,0,0,0.05)] border border-slate-100/90 p-8 sm:p-12 relative z-10 my-8 animate-fade-in-up">
+      <div className="w-full max-w-3xl bg-white/95 backdrop-blur-sm rounded-[32px] shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-slate-100/90 p-8 sm:p-12 relative z-10 my-8 animate-fade-in-up">
 
         {/* Brand Header */}
         <div className="flex flex-col items-center text-center gap-3 mb-8">
           {/* Pulsing Blood Drop Logo with Ripple Ring */}
           <div className="relative mb-2 flex items-center justify-center">
-            <span className="absolute w-20 h-20 rounded-full bg-red-500/20 animate-pulse-ring pointer-events-none"></span>
+            <span className="absolute w-20 h-20 rounded-full bg-[#A61818]/10 animate-pulse-ring pointer-events-none"></span>
             <Link
               to="/"
-              className="relative flex items-center justify-center w-14 h-16 rounded-t-full rounded-b-[50%] bg-gradient-to-b from-[#e63946] to-[#c1121f] shadow-lg shadow-red-500/30 transition-transform duration-300 hover:scale-110 active:scale-95 animate-heartbeat"
+              className="relative flex items-center justify-center w-14 h-16 rounded-t-full rounded-b-[50%] bg-gradient-to-b from-[#A61818] to-[#970707] shadow-lg shadow-[#A61818]/25 transition-transform duration-300 hover:scale-110 active:scale-95 animate-heartbeat"
               title="Return to LifeStream Home"
             >
               <div className="w-4 h-4 bg-white/40 rounded-full mb-3"></div>
             </Link>
           </div>
 
-          <div className="inline-flex items-center gap-2 text-[10px] sm:text-[11px] font-black uppercase tracking-widest text-[#e63946] bg-red-50/90 border border-red-100/80 px-3.5 py-1.5 rounded-full shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-[#e63946] animate-ping"></span>
+          <div className="inline-flex items-center gap-2 text-[10px] sm:text-[11px] font-black uppercase tracking-widest text-[#A61818] bg-red-50 border border-red-100 px-3.5 py-1.5 rounded-full shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-[#A61818] animate-ping"></span>
             <span>Life Saviour Registration</span>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl font-black text-[#0f172a] tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-black text-[#26282C] tracking-tight mt-1">
             Become a Life Saviour
           </h1>
-          <p className="text-sm text-slate-500 font-medium max-w-md mt-1 leading-relaxed">
+          <p className="text-sm text-slate-500 font-medium max-w-md mt-1.5 leading-relaxed">
             Step forward into the donor registry so emergency patients and hospitals can reach you when every second counts.
           </p>
 
           {/* Inspirational Life-Saver Banner */}
-          <div className="w-full max-w-md mt-2 px-4 py-2.5 rounded-2xl bg-gradient-to-r from-red-50 via-rose-50/70 to-red-50 border border-red-100/70 text-slate-700 text-xs font-semibold flex items-center justify-center gap-2.5 shadow-xs">
-            <svg className="w-4 h-4 text-[#e63946] shrink-0 animate-heartbeat" fill="currentColor" viewBox="0 0 24 24">
+          <div className="w-full max-w-md mt-4 px-4 py-3 rounded-2xl bg-gradient-to-r from-red-50 via-[#fef2f2] to-red-50 border border-red-100 text-slate-700 text-xs font-semibold flex items-center justify-center gap-2.5 shadow-sm">
+            <svg className="w-4 h-4 text-[#A61818] shrink-0 animate-heartbeat" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
             </svg>
             <span className="text-slate-600">
-              <strong className="text-red-700 font-bold">1 Donation</strong> can save up to <strong className="text-[#0f172a] font-bold">3 lives</strong>. Thank you for answering the call!
+              <strong className="text-[#970707] font-bold">1 Donation</strong> can save up to <strong className="text-[#26282C] font-bold">3 lives</strong>. Thank you for answering the call!
             </span>
           </div>
         </div>
@@ -217,8 +217,8 @@ export default function Registration() {
           <section className="transition-all duration-300">
             <div className="mb-6 flex items-center justify-between">
               <div>
-                <span className="text-[11px] font-black text-[#e63946] uppercase tracking-widest inline-block mb-1 bg-red-50 px-2.5 py-0.5 rounded-md">Step 1</span>
-                <h2 className="text-xl font-black text-[#0f172a]">Account Credentials</h2>
+                <span className="text-[11px] font-black text-[#A61818] uppercase tracking-widest inline-block mb-1 bg-red-50 px-2.5 py-0.5 rounded-md">Step 1</span>
+                <h2 className="text-xl font-black text-[#26282C]">Account Credentials</h2>
               </div>
               <span className="text-xs font-bold text-slate-400">Personal Info</span>
             </div>
@@ -227,14 +227,14 @@ export default function Registration() {
               <div className="sm:col-span-2">
                 <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">Full Name <span className="text-red-500">*</span></label>
                 <div className="relative group">
-                  <svg className="w-5 h-5 text-slate-400 group-focus-within:text-[#e63946] transition-colors absolute left-4 top-1/2 -translate-y-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
-                  <input type="text" name="fullName" placeholder="e.g. Asim Raza" value={formData.fullName} onChange={handleInputChange} required className="w-full pl-11 pr-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-semibold text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#e63946]/20 focus:border-[#e63946] focus:bg-white transition-all duration-200" />
+                  <svg className="w-5 h-5 text-slate-400 group-focus-within:text-[#A61818] transition-colors absolute left-4 top-1/2 -translate-y-1/2" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
+                  <input type="text" name="fullName" placeholder="e.g. Asim Raza" value={formData.fullName} onChange={handleInputChange} required className="w-full pl-11 pr-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-semibold text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#A61818]/20 focus:border-[#A61818] focus:bg-white transition-all duration-200" />
                 </div>
               </div>
 
               <div>
                 <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">Phone Number <span className="text-red-500">*</span></label>
-                <div className="flex bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden focus-within:ring-2 focus-within:ring-[#e63946]/20 focus-within:border-[#e63946] focus-within:bg-white transition-all duration-200">
+                <div className="flex bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden focus-within:ring-2 focus-within:ring-[#A61818]/20 focus-within:border-[#A61818] focus-within:bg-white transition-all duration-200">
                   <span className="flex items-center justify-center px-4 bg-slate-100/60 border-r border-slate-200 text-slate-600 font-bold text-sm select-none">
                     +92
                   </span>
@@ -245,8 +245,8 @@ export default function Registration() {
               <div>
                 <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">Password <span className="text-red-500">*</span></label>
                 <div className="relative group">
-                  <input type={showPassword ? "text" : "password"} name="password" placeholder="Min. 8 characters" value={formData.password} onChange={handleInputChange} minLength={8} required className="w-full pl-5 pr-12 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-semibold text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#e63946]/20 focus:border-[#e63946] focus:bg-white transition-all duration-200" />
-                  <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-[#0f172a] transition-colors cursor-pointer">
+                  <input type={showPassword ? "text" : "password"} name="password" placeholder="Min. 8 characters" value={formData.password} onChange={handleInputChange} minLength={8} required className="w-full pl-5 pr-12 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-semibold text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#A61818]/20 focus:border-[#A61818] focus:bg-white transition-all duration-200" />
+                  <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-[#26282C] transition-colors cursor-pointer">
                     {showPassword ? (
                       <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858-5.908a10.046 10.046 0 013.682-.863c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21M3 3l18 18" /></svg>
                     ) : (
@@ -264,8 +264,8 @@ export default function Registration() {
           <section className="transition-all duration-300">
             <div className="mb-6 flex items-center justify-between">
               <div>
-                <span className="text-[11px] font-black text-[#e63946] uppercase tracking-widest inline-block mb-1 bg-red-50 px-2.5 py-0.5 rounded-md">Step 2</span>
-                <h2 className="text-xl font-black text-[#0f172a]">Medical & Location Profile</h2>
+                <span className="text-[11px] font-black text-[#A61818] uppercase tracking-widest inline-block mb-1 bg-red-50 px-2.5 py-0.5 rounded-md">Step 2</span>
+                <h2 className="text-xl font-black text-[#26282C]">Medical & Location Profile</h2>
               </div>
               <span className="text-xs font-bold text-slate-400">Match Accuracy</span>
             </div>
@@ -274,8 +274,8 @@ export default function Registration() {
               <div>
                 <div className="flex justify-between items-end mb-3">
                   <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider">Blood Group <span className="text-red-500">*</span></label>
-                  <span className="text-[10px] font-black bg-[#0f172a] text-white px-3 py-1 rounded-full uppercase tracking-widest flex items-center gap-1.5 shadow-xs">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#e63946]"></span>
+                  <span className="text-[10px] font-black bg-[#26282C] text-white px-3 py-1 rounded-full uppercase tracking-widest flex items-center gap-1.5 shadow-xs">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#A61818]"></span>
                     Selected: {formData.bloodGroup}
                   </span>
                 </div>
@@ -288,7 +288,7 @@ export default function Registration() {
                         type="button"
                         onClick={() => handleBloodSelect(bg)}
                         className={`py-3.5 rounded-2xl font-black text-sm transition-all duration-200 cursor-pointer ${isSelected
-                          ? 'bg-gradient-to-b from-[#e63946] to-[#c1121f] text-white shadow-lg shadow-red-500/30 scale-105 ring-2 ring-red-400'
+                          ? 'bg-gradient-to-b from-[#A61818] to-[#970707] text-white shadow-lg shadow-[#A61818]/30 scale-105 ring-2 ring-[#A61818]/50'
                           : 'bg-slate-50 border border-slate-200 text-slate-600 hover:border-slate-300 hover:bg-slate-100 hover:-translate-y-0.5 active:scale-95'
                           }`}
                       >
@@ -301,13 +301,13 @@ export default function Registration() {
 
               <div>
                 <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">City / Residential Address <span className="text-red-500">*</span></label>
-                <input type="text" name="address" placeholder="e.g. Sillanwali Road, Hussain Chowk, Sargodha" value={formData.address} onChange={handleInputChange} required className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-semibold text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#e63946]/20 focus:border-[#e63946] focus:bg-white transition-all duration-200" />
+                <input type="text" name="address" placeholder="e.g. Sillanwali Road, Hussain Chowk, Sargodha" value={formData.address} onChange={handleInputChange} required className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-semibold text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-[#A61818]/20 focus:border-[#A61818] focus:bg-white transition-all duration-200" />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label className="block text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">Gender</label>
-                  <select name="gender" value={formData.gender} onChange={handleInputChange} className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#e63946]/20 focus:border-[#e63946] focus:bg-white transition-all cursor-pointer appearance-none">
+                  <select name="gender" value={formData.gender} onChange={handleInputChange} className="w-full px-5 py-3.5 bg-slate-50 border border-slate-200 rounded-2xl text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#A61818]/20 focus:border-[#A61818] focus:bg-white transition-all cursor-pointer appearance-none">
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                     <option value="Other">Other</option>
@@ -316,7 +316,7 @@ export default function Registration() {
 
                 <div className="flex flex-col justify-end">
                   <label className="flex items-center gap-3 p-3.5 bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer hover:bg-slate-100 transition-all duration-200 h-[50px] group">
-                    <input type="checkbox" name="isAvailable" checked={formData.isAvailable} onChange={handleInputChange} className="w-5 h-5 rounded border-slate-300 text-[#e63946] focus:ring-[#e63946] cursor-pointer" />
+                    <input type="checkbox" name="isAvailable" checked={formData.isAvailable} onChange={handleInputChange} className="w-5 h-5 rounded border-slate-300 text-[#A61818] focus:ring-[#A61818] cursor-pointer" />
                     <span className="text-sm font-bold text-slate-700 flex items-center gap-2">
                       <span className={`w-2 h-2 rounded-full ${formData.isAvailable ? 'bg-emerald-500 animate-pulse' : 'bg-slate-400'}`}></span>
                       {formData.isAvailable ? 'Available for emergency requests' : 'Currently On Hold'}
@@ -327,7 +327,7 @@ export default function Registration() {
 
               <div className="p-5 bg-slate-50 border border-slate-200 rounded-2xl flex flex-col gap-4 mt-2 transition-all">
                 <label className="flex items-center gap-3 cursor-pointer">
-                  <input type="checkbox" name="hasDonatedBefore" checked={formData.hasDonatedBefore} onChange={handleInputChange} className="w-5 h-5 rounded border-slate-300 text-[#e63946] focus:ring-[#e63946] cursor-pointer" />
+                  <input type="checkbox" name="hasDonatedBefore" checked={formData.hasDonatedBefore} onChange={handleInputChange} className="w-5 h-5 rounded border-slate-300 text-[#A61818] focus:ring-[#A61818] cursor-pointer" />
                   <div className="flex flex-col">
                     <span className="text-sm font-bold text-slate-800">Have you donated blood before?</span>
                     <span className="text-xs text-slate-500 font-medium mt-0.5">Enables tracking of your 60-day recovery cooldown period.</span>
@@ -337,7 +337,7 @@ export default function Registration() {
                 {formData.hasDonatedBefore && (
                   <div className="pt-4 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center gap-3 animate-fade-in-up">
                     <label className="text-[11px] font-bold text-slate-500 uppercase tracking-wider shrink-0">Date of Last Donation</label>
-                    <input type="date" name="lastDonationDate" value={formData.lastDonationDate} onChange={handleInputChange} max={new Date().toISOString().split('T')[0]} className="flex-1 px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#e63946]/20 focus:border-[#e63946]" />
+                    <input type="date" name="lastDonationDate" value={formData.lastDonationDate} onChange={handleInputChange} max={new Date().toISOString().split('T')[0]} className="flex-1 px-4 py-3 bg-white border border-slate-200 rounded-xl text-sm font-semibold text-slate-800 focus:outline-none focus:ring-2 focus:ring-[#A61818]/20 focus:border-[#A61818]" />
                   </div>
                 )}
               </div>
@@ -350,8 +350,8 @@ export default function Registration() {
           <section className="transition-all duration-300">
             <div className="mb-6 flex items-center justify-between">
               <div>
-                <span className="text-[11px] font-black text-[#e63946] uppercase tracking-widest inline-block mb-1 bg-red-50 px-2.5 py-0.5 rounded-md">Step 3</span>
-                <h2 className="text-xl font-black text-[#0f172a]">Health & Safety Clearance</h2>
+                <span className="text-[11px] font-black text-[#A61818] uppercase tracking-widest inline-block mb-1 bg-red-50 px-2.5 py-0.5 rounded-md">Step 3</span>
+                <h2 className="text-xl font-black text-[#26282C]">Health & Safety Clearance</h2>
               </div>
               <span className="text-xs font-bold text-emerald-600">Patient Protection</span>
             </div>
@@ -377,7 +377,7 @@ export default function Registration() {
             </div>
 
             <label className="flex items-start gap-3 p-4 bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer hover:bg-slate-100 transition-colors">
-              <input type="checkbox" name="health_generalEligible" checked={formData.healthStatus.generalEligible} onChange={handleInputChange} required className="w-5 h-5 rounded border-slate-300 text-[#e63946] focus:ring-[#e63946] mt-0.5 shrink-0 cursor-pointer" />
+              <input type="checkbox" name="health_generalEligible" checked={formData.healthStatus.generalEligible} onChange={handleInputChange} required className="w-5 h-5 rounded border-slate-300 text-[#A61818] focus:ring-[#A61818] mt-0.5 shrink-0 cursor-pointer" />
               <span className="text-sm font-medium text-slate-700 leading-relaxed">
                 I confirm that I am between <strong className="text-slate-900">18–45 years old</strong>, weigh at least <strong className="text-slate-900">50 kg</strong>, have no active fever or transmissible blood infections, and voluntarily register as a life-saving donor.
               </span>
@@ -389,7 +389,7 @@ export default function Registration() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full py-4.5 bg-gradient-to-r from-[#e63946] via-[#d62828] to-[#c1121f] text-white font-black rounded-full text-sm sm:text-base tracking-wide shadow-[0_8px_25px_rgba(230,57,70,0.35)] transition-all duration-200 cursor-pointer disabled:opacity-70 flex items-center justify-center gap-2.5 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(230,57,70,0.5)] active:translate-y-0 active:scale-[0.99] animate-shimmer"
+              className="w-full py-4 bg-gradient-to-r from-[#A61818] via-[#970707] to-[#800505] text-white font-black rounded-full text-sm sm:text-base tracking-wide shadow-[0_8px_25px_rgba(166,24,24,0.35)] transition-all duration-200 cursor-pointer disabled:opacity-70 flex items-center justify-center gap-2.5 hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(166,24,24,0.5)] active:translate-y-0 active:scale-[0.99] animate-shimmer"
             >
               {isSubmitting ? (
                 <>
@@ -407,7 +407,7 @@ export default function Registration() {
             </button>
             <div className="text-center text-sm text-slate-500 font-medium mt-6 flex items-center justify-center gap-1.5">
               <span>Already part of the network?</span>
-              <Link to="/sign-in" className="text-[#0f172a] font-bold hover:text-[#e63946] hover:underline transition-colors">
+              <Link to="/sign-in" className="text-[#26282C] font-bold hover:text-[#A61818] hover:underline transition-colors">
                 Sign in securely
               </Link>
             </div>
