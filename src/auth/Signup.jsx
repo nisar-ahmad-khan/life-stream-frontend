@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import API_BASE_URL from '../creds/api';
@@ -8,6 +8,9 @@ const BLOOD_GROUPS = ['O+', 'A+', 'B+', 'AB+', 'O-', 'A-', 'B-', 'AB-'];
 const POPULAR_CITIES = ['Sargodha', 'Lahore', 'Faisalabad', 'Islamabad', 'Rawalpindi', 'Multan'];
 
 export default function Registration() {
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     fullName: '',
@@ -167,8 +170,8 @@ export default function Registration() {
           {/* Pulsing Blood Drop Logo with Ripple Ring */}
           <div className="relative mb-2 flex items-center justify-center">
             <span className="absolute w-20 h-20 rounded-full bg-red-500/20 animate-pulse-ring pointer-events-none"></span>
-            <Link 
-              to="/" 
+            <Link
+              to="/"
               className="relative flex items-center justify-center w-14 h-16 rounded-t-full rounded-b-[50%] bg-gradient-to-b from-[#e63946] to-[#c1121f] shadow-lg shadow-red-500/30 transition-transform duration-300 hover:scale-110 active:scale-95 animate-heartbeat"
               title="Return to LifeStream Home"
             >
@@ -191,7 +194,7 @@ export default function Registration() {
           {/* Inspirational Life-Saver Banner */}
           <div className="w-full max-w-md mt-2 px-4 py-2.5 rounded-2xl bg-gradient-to-r from-red-50 via-rose-50/70 to-red-50 border border-red-100/70 text-slate-700 text-xs font-semibold flex items-center justify-center gap-2.5 shadow-xs">
             <svg className="w-4 h-4 text-[#e63946] shrink-0 animate-heartbeat" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
             </svg>
             <span className="text-slate-600">
               <strong className="text-red-700 font-bold">1 Donation</strong> can save up to <strong className="text-[#0f172a] font-bold">3 lives</strong>. Thank you for answering the call!
@@ -396,7 +399,7 @@ export default function Registration() {
               ) : (
                 <>
                   <svg className="w-5 h-5 fill-current animate-heartbeat shrink-0" viewBox="0 0 24 24">
-                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
                   </svg>
                   <span>REGISTER AS LIFE SAVIOUR</span>
                 </>
