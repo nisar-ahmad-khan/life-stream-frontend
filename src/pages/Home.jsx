@@ -35,9 +35,9 @@ export default function Home() {
   const [copiedPhone, setCopiedPhone] = useState(false);
 
   const educationalSlides = [
-    { id: 1, badge: "Divine Guidance", quote: "“And whoever saves one — it is as if he had saved mankind entirely.”", reference: "— Al-Quran (Surah Al-Ma'idah, 5:32)", bg: "bg-gradient-to-r from-[#1d3557] to-[#0f172a]" },
-    { id: 2, badge: "Prophetic Tradition", quote: "“The most beloved of people to Allah are those who are most beneficial to people.”", reference: "— Al-Mu'jam Al-Awsat (Hadith)", bg: "bg-gradient-to-r from-[#e63946] to-[#b71c1c]" },
-    { id: 3, badge: "Community Duty", quote: "“Help you one another in righteousness and piety, but do not help one another in sin and aggression.”", reference: "— Al-Quran (Surah Al-Ma'idah, 5:2)", bg: "bg-gradient-to-r from-[#0f172a] to-[#1e293b]" },
+    { id: 1, badge: "Divine Guidance", quote: "“And whoever saves one — it is as if he had saved mankind entirely.”", reference: "— Al-Quran (Surah Al-Ma'idah, 5:32)", bg: "bg-gradient-to-r from-[#3A3D42] to-[#26282C]" },
+    { id: 2, badge: "Prophetic Tradition", quote: "“The most beloved of people to Allah are those who are most beneficial to people.”", reference: "— Al-Mu'jam Al-Awsat (Hadith)", bg: "bg-gradient-to-r from-[#A61818] to-[#970707]" },
+    { id: 3, badge: "Community Duty", quote: "“Help you one another in righteousness and piety, but do not help one another in sin and aggression.”", reference: "— Al-Quran (Surah Al-Ma'idah, 5:2)", bg: "bg-gradient-to-r from-[#26282C] to-[#1A1C1F]" },
     { id: 4, badge: "The Power of Charity", quote: "“Charity does not decrease wealth.”", reference: "— Sahih Muslim, 2588", bg: "bg-gradient-to-r from-[#065f46] to-[#022c22]" },
     { id: 5, badge: "Kindness to Others", quote: "“Whoever is not merciful to people, Allah will not be merciful to him.”", reference: "— Sahih al-Bukhari, 7376; Sahih Muslim, 2319", bg: "bg-gradient-to-r from-[#7c2d12] to-[#431407]" },
     { id: 6, badge: "A Lifeline of Hope", quote: "“And whoever saves a life, it is as if he had saved all of mankind.”", reference: "— Al-Quran (Surah Al-Ma'idah, 5:32)", bg: "bg-gradient-to-r from-[#155e75] to-[#082f49]" },
@@ -103,14 +103,14 @@ export default function Home() {
       <section className="relative w-full pt-16 pb-12 px-4 overflow-hidden bg-gradient-to-b from-[#fff0f3]/60 to-transparent">
         <div className="max-w-5xl mx-auto relative z-10 flex flex-col items-center">
           <div className="w-full max-w-4xl text-center mb-10 flex flex-col items-center animate-in fade-in zoom-in duration-500">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-red-100 shadow-sm text-xs font-bold text-[#e63946] mb-6">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-red-100 shadow-sm text-xs font-bold text-[#A61818] mb-6">
               <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" /></svg>
               Hits different when you save a life.
             </span>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#0f172a] mb-2">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#26282C] mb-2">
               Discover Lifesaving
             </h1>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#e63946] mb-5">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#A61818] mb-5">
               Donors & Communities
             </h1>
             <p className="text-base md:text-lg text-slate-500 font-medium max-w-2xl mx-auto mb-5 leading-relaxed">
@@ -154,7 +154,7 @@ export default function Home() {
                 </select>
               </div>
             </div>
-            <button onClick={() => fetchDonors()} disabled={isLoading} className="w-full md:w-auto px-8 py-4 bg-[#e63946] hover:bg-[#d62828] text-white rounded-full font-bold text-sm shadow-md shadow-red-500/20 transition-all flex items-center justify-center gap-2 cursor-pointer">
+            <button onClick={() => fetchDonors()} disabled={isLoading} className="w-full md:w-auto px-8 py-4 bg-[#A61818] hover:bg-[#970707] text-white rounded-full font-bold text-sm shadow-md shadow-[#A61818]/20 transition-all flex items-center justify-center gap-2 cursor-pointer">
               {isLoading ? 'SEARCHING...' : 'Find Donors'}
             </button>
           </div>
@@ -224,8 +224,8 @@ export default function Home() {
       {/* DONOR GRID RESULTS */}
       <main className="w-full flex-1 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto z-10">
         <div className="mb-10 w-full">
-          <h4 className="text-[11px] font-black text-[#e63946] uppercase tracking-widest mb-3">AVAILABLE DONORS</h4>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#0f172a] mb-4 tracking-tight">Discover Donors Near You</h2>
+          <h4 className="text-[11px] font-black text-[#A61818] uppercase tracking-widest mb-3">AVAILABLE DONORS</h4>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-[#26282C] mb-4 tracking-tight">Discover Donors Near You</h2>
           <p className="text-base text-slate-500 font-medium max-w-2xl mb-8 leading-relaxed">
             Find eligible blood donors in your area. Browse profiles, check availability, and connect instantly to save a life today.
           </p>
@@ -236,7 +236,7 @@ export default function Home() {
                 key={group}
                 onClick={() => setSelectedBloodGroup(group)}
                 className={`flex items-center gap-2 text-[13px] font-bold pb-4 -mb-[1px] border-b-2 transition-colors cursor-pointer ${selectedBloodGroup === group
-                  ? 'border-[#e63946] text-[#e63946]'
+                  ? 'border-[#A61818] text-[#A61818]'
                   : 'border-transparent text-slate-500 hover:text-slate-800'
                   }`}
               >
@@ -253,7 +253,7 @@ export default function Home() {
 
         {filteredDonors.length === 0 ? (
           <div className="bg-white p-16 rounded-[32px] border border-slate-100 text-center flex flex-col items-center justify-center gap-4 shadow-sm">
-            <div className="w-16 h-16 bg-red-50 text-[#e63946] rounded-full flex items-center justify-center">
+            <div className="w-16 h-16 bg-red-50 text-[#A61818] rounded-full flex items-center justify-center">
               <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" /></svg>
             </div>
             <h4 className="text-xl font-bold text-slate-800">No Donors Found</h4>
@@ -279,7 +279,7 @@ export default function Home() {
                       Blood Donor
                     </div>
                     <div className="absolute top-4 right-4 flex gap-2">
-                      <button onClick={(e) => { e.stopPropagation(); window.open(`tel:${donor.phone.replace(/[^0-9+]/g, '')}`, '_self'); }} className="w-8 h-8 rounded-full bg-slate-900/40 backdrop-blur-md flex items-center justify-center text-white hover:bg-[#e63946] transition-colors">
+                      <button onClick={(e) => { e.stopPropagation(); window.open(`tel:${donor.phone.replace(/[^0-9+]/g, '')}`, '_self'); }} className="w-8 h-8 rounded-full bg-slate-900/40 backdrop-blur-md flex items-center justify-center text-white hover:bg-[#A61818] transition-colors">
                         <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                       </button>
                       <button onClick={(e) => { e.stopPropagation(); window.open(`https://wa.me/${donor.phone.replace(/[^0-9]/g, '')}`, '_blank'); }} className="w-8 h-8 rounded-full bg-slate-900/40 backdrop-blur-md flex items-center justify-center text-white hover:bg-[#25D366] transition-colors">
@@ -323,7 +323,7 @@ export default function Home() {
 
                   <div className="px-5 py-4 border-t border-slate-100 flex justify-between items-center bg-slate-50/50">
                     <div className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-full bg-red-100 text-[#e63946] flex items-center justify-center">
+                      <div className="w-6 h-6 rounded-full bg-red-100 text-[#A61818] flex items-center justify-center">
                         <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                       </div>
                       <span className="text-[11px] font-bold text-slate-700">Verified Profile</span>
@@ -340,7 +340,7 @@ export default function Home() {
         )}
       </main>
 
-      {/* ABOUT SECTION (Modeled after image_3d05de.jpg) */}
+      {/* ABOUT SECTION */}
       <section className="w-full bg-white py-16 md:py-24 px-4 sm:px-6 lg:px-8 border-t border-slate-200 mt-16">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
@@ -350,7 +350,7 @@ export default function Home() {
               Who We Are
             </span>
 
-            <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] tracking-tight mb-2">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#26282C] tracking-tight mb-2">
               About LifeStream
             </h2>
 
@@ -361,7 +361,7 @@ export default function Home() {
             <div>
               <Link
                 to="/about"
-                className="inline-flex justify-center items-center bg-[#0f172a] hover:bg-black text-white text-sm font-semibold px-8 py-3.5 transition-colors duration-200"
+                className="inline-flex justify-center items-center bg-[#26282C] hover:bg-black text-white text-sm font-semibold px-8 py-3.5 transition-colors sm:w-[70%] duration-200"
               >
                 About Us
               </Link>
@@ -387,12 +387,12 @@ export default function Home() {
             <button onClick={() => setShowDetailModal(false)} className="absolute top-6 right-6 w-8 h-8 rounded-full bg-slate-50 hover:bg-slate-100 text-slate-500 flex items-center justify-center transition-colors cursor-pointer">✕</button>
 
             <div className="flex items-center gap-5">
-              <div className="w-20 h-20 rounded-full bg-red-50 border-4 border-white shadow-md text-[#e63946] flex items-center justify-center font-black text-2xl">
+              <div className="w-20 h-20 rounded-full bg-red-50 border-4 border-white shadow-md text-[#A61818] flex items-center justify-center font-black text-2xl">
                 {selectedDonor.bloodGroup}
               </div>
               <div>
                 <h3 className="text-2xl font-bold text-slate-800">{selectedDonor.name}</h3>
-                <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full uppercase mt-2 inline-block ${checkCooldownActive(selectedDonor.lastDonationDate) ? 'bg-slate-100 text-slate-500' : 'bg-red-50 text-[#e63946]'}`}>
+                <span className={`text-[10px] font-bold px-2.5 py-1 rounded-full uppercase mt-2 inline-block ${checkCooldownActive(selectedDonor.lastDonationDate) ? 'bg-slate-100 text-slate-500' : 'bg-red-50 text-[#A61818]'}`}>
                   {checkCooldownActive(selectedDonor.lastDonationDate) ? 'Recovery Period' : 'Ready to Donate'}
                 </span>
               </div>
@@ -403,7 +403,7 @@ export default function Home() {
                 <span className="text-slate-500 font-medium">Phone</span>
                 <div className="flex items-center gap-2">
                   <span className="font-bold text-slate-800">{selectedDonor.phone}</span>
-                  <button onClick={() => copyPhoneNumber(selectedDonor.phone)} className="text-[10px] font-bold text-[#e63946] hover:underline cursor-pointer">
+                  <button onClick={() => copyPhoneNumber(selectedDonor.phone)} className="text-[10px] font-bold text-[#A61818] hover:underline cursor-pointer">
                     {copiedPhone ? 'Copied!' : 'Copy'}
                   </button>
                 </div>
@@ -415,7 +415,7 @@ export default function Home() {
             </div>
 
             <div className="grid grid-cols-2 gap-3 mt-2">
-              <a href={`tel:${selectedDonor.phone.replace(/[^0-9+]/g, '')}`} className="py-3.5 bg-[#0f172a] hover:bg-[#1e293b] text-white font-bold rounded-xl text-sm transition-all flex items-center justify-center gap-2 cursor-pointer">
+              <a href={`tel:${selectedDonor.phone.replace(/[^0-9+]/g, '')}`} className="py-3.5 bg-[#26282C] hover:bg-[#1A1C1F] text-white font-bold rounded-xl text-sm transition-all flex items-center justify-center gap-2 cursor-pointer">
                 Call
               </a>
               <a href={`https://wa.me/${selectedDonor.phone.replace(/[^0-9]/g, '')}?text=Hello%20${encodeURIComponent(selectedDonor.name)}`} target="_blank" rel="noreferrer" className="py-3.5 bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold rounded-xl text-sm transition-all flex items-center justify-center gap-2 cursor-pointer">

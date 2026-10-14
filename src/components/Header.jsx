@@ -46,7 +46,7 @@ export default function Header({ title = "LifeStream", showBack = true }) {
         <div className="flex items-center gap-3">
           <Link to="/" className="flex items-center gap-3 group cursor-pointer select-none" onClick={() => setMobileMenuOpen(false)}>
             {/* Animated Drop Logo */}
-            <div className="relative flex items-center justify-center w-10 h-11 rounded-t-full rounded-b-[50%] bg-gradient-to-b from-[#e63946] to-[#c1121f] shadow-lg shadow-red-500/20 transition-transform duration-300 group-hover:scale-105">
+            <div className="relative flex items-center justify-center w-10 h-11 rounded-t-full rounded-b-[50%] bg-gradient-to-b from-[#A61818] to-[#970707] shadow-lg shadow-[#A61818]/20 transition-transform duration-300 group-hover:scale-105">
               <div className="w-3 h-3 bg-white/40 rounded-full mb-3"></div>
               <span className="absolute -bottom-0.5 -right-0.5 flex h-3 w-3">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
@@ -56,8 +56,8 @@ export default function Header({ title = "LifeStream", showBack = true }) {
 
             {/* Typography */}
             <div className="flex flex-col justify-center">
-              <span className="text-2xl font-black tracking-tight text-[#0f172a] leading-none">
-                Life<span className="text-[#e63946]">Stream</span>
+              <span className="text-2xl font-black tracking-tight text-[#26282C] leading-none">
+                Life<span className="text-[#A61818]">Stream</span>
               </span>
               <span className="text-[10px] font-bold tracking-widest text-slate-400 uppercase mt-1">
                 Donor Network
@@ -77,7 +77,7 @@ export default function Header({ title = "LifeStream", showBack = true }) {
               <Link
                 to="/profile"
                 className={`flex items-center gap-2 px-5 py-2.5 rounded-full border text-sm font-bold transition-all shadow-sm ${isProfile
-                  ? 'bg-red-50 border-red-200 text-[#e63946]'
+                  ? 'bg-red-50 border-red-200 text-[#A61818]'
                   : 'bg-white border-slate-200 text-slate-700 hover:border-slate-300 hover:bg-slate-50'
                   }`}
               >
@@ -88,20 +88,18 @@ export default function Header({ title = "LifeStream", showBack = true }) {
                 </div>
                 <span>Profile</span>
               </Link>
-
-
             </div>
           ) : (
             <div className="hidden sm:flex items-center gap-3">
               <Link
                 to="/sign-in"
-                className="text-sm font-bold text-slate-600 hover:text-[#0f172a] px-4 py-2 transition-colors"
+                className="text-sm font-bold text-slate-600 hover:text-[#26282C] px-4 py-2 transition-colors"
               >
                 Sign In
               </Link>
               <Link
                 to="/sign-up"
-                className="text-sm font-bold text-white bg-[#e63946] hover:bg-[#d62828] px-6 py-3 rounded-full shadow-[0_4px_14px_0_rgb(230,57,70,0.39)] transition-all hover:-translate-y-0.5"
+                className="text-sm font-bold text-white bg-[#A61818] hover:bg-[#970707] px-6 py-3 rounded-full shadow-[0_4px_14px_0_rgba(166,24,24,0.39)] transition-all hover:-translate-y-0.5"
               >
                 Register as Donor
               </Link>
@@ -111,7 +109,7 @@ export default function Header({ title = "LifeStream", showBack = true }) {
           {/* Mobile Menu Toggle Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`sm:hidden p-2.5 rounded-full transition-colors ${mobileMenuOpen ? 'bg-slate-100 text-[#0f172a]' : 'bg-white text-slate-600 border border-slate-200'
+            className={`sm:hidden p-2.5 rounded-full transition-colors ${mobileMenuOpen ? 'bg-slate-100 text-[#26282C]' : 'bg-white text-slate-600 border border-slate-200'
               }`}
             aria-label="Toggle Navigation Menu"
           >
@@ -133,7 +131,7 @@ export default function Header({ title = "LifeStream", showBack = true }) {
           <Link
             to="/"
             onClick={() => setMobileMenuOpen(false)}
-            className={`p-4 rounded-2xl text-base font-bold flex items-center gap-3 ${isHome ? 'bg-red-50 text-[#e63946]' : 'text-slate-700 hover:bg-slate-50 border border-slate-100'}`}
+            className={`p-4 rounded-2xl text-base font-bold flex items-center gap-3 ${isHome ? 'bg-red-50 text-[#A61818]' : 'text-slate-700 hover:bg-slate-50 border border-slate-100'}`}
           >
             <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
@@ -146,7 +144,7 @@ export default function Header({ title = "LifeStream", showBack = true }) {
               <Link
                 to="/profile"
                 onClick={() => setMobileMenuOpen(false)}
-                className={`p-4 rounded-2xl text-base font-bold flex items-center gap-3 ${isProfile ? 'bg-red-50 text-[#e63946]' : 'text-slate-700 hover:bg-slate-50 border border-slate-100'}`}
+                className={`p-4 rounded-2xl text-base font-bold flex items-center gap-3 ${isProfile ? 'bg-red-50 text-[#A61818]' : 'text-slate-700 hover:bg-slate-50 border border-slate-100'}`}
               >
                 <div className="w-8 h-8 rounded-full bg-white shadow-sm flex items-center justify-center">
                   <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" /></svg>
@@ -169,7 +167,7 @@ export default function Header({ title = "LifeStream", showBack = true }) {
               <Link
                 to="/sign-up"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full py-4 text-center bg-[#e63946] text-white font-bold rounded-full text-base shadow-[0_4px_14px_0_rgb(230,57,70,0.39)]"
+                className="w-full py-4 text-center bg-[#A61818] text-white font-bold rounded-full text-base shadow-[0_4px_14px_0_rgba(166,24,24,0.39)]"
               >
                 Register as Donor
               </Link>
