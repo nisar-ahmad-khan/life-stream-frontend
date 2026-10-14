@@ -152,11 +152,19 @@ export default function Signin() {
 
         {/* Brand Logo & Title */}
         <div className="flex flex-col items-center text-center gap-3">
-          <div className="relative flex items-center justify-center w-12 h-14 rounded-t-full rounded-b-[50%] bg-gradient-to-b from-[#A61818] to-[#970707] shadow-lg shadow-[#A61818]/20 transition-transform duration-300 hover:scale-105">
-            <div className="w-3.5 h-3.5 bg-white/40 rounded-full mb-3"></div>
-          </div>
+          <Link
+            to="/"
+            className="flex items-center justify-center group select-none"
+            title="Return to LifeStream Home"
+          >
+            <img
+              src="/logo.png"
+              alt="LifeStream - Donate Blood, Save Lives"
+              className="h-16 sm:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
+          </Link>
           <div>
-            <h2 className="text-3xl font-black text-[#26282C] tracking-tight mt-2">
+            <h2 className="text-3xl font-black text-[#26282C] tracking-tight mt-1">
               Welcome Back
             </h2>
             <p className="text-sm text-slate-500 font-medium mt-1">

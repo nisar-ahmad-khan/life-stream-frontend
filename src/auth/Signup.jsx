@@ -167,17 +167,17 @@ export default function Registration() {
 
         {/* Brand Header */}
         <div className="flex flex-col items-center text-center gap-3 mb-8">
-          {/* Pulsing Blood Drop Logo with Ripple Ring */}
-          <div className="relative mb-2 flex items-center justify-center">
-            <span className="absolute w-20 h-20 rounded-full bg-[#A61818]/10 animate-pulse-ring pointer-events-none"></span>
-            <Link
-              to="/"
-              className="relative flex items-center justify-center w-14 h-16 rounded-t-full rounded-b-[50%] bg-gradient-to-b from-[#A61818] to-[#970707] shadow-lg shadow-[#A61818]/25 transition-transform duration-300 hover:scale-110 active:scale-95 animate-heartbeat"
-              title="Return to LifeStream Home"
-            >
-              <div className="w-4 h-4 bg-white/40 rounded-full mb-3"></div>
-            </Link>
-          </div>
+          <Link
+            to="/"
+            className="flex items-center justify-center group mb-2 select-none"
+            title="Return to LifeStream Home"
+          >
+            <img
+              src="/logo.png"
+              alt="LifeStream - Donate Blood, Save Lives"
+              className="h-16 sm:h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
+          </Link>
 
           <div className="inline-flex items-center gap-2 text-[10px] sm:text-[11px] font-black uppercase tracking-widest text-[#A61818] bg-red-50 border border-red-100 px-3.5 py-1.5 rounded-full shadow-sm">
             <span className="w-2 h-2 rounded-full bg-[#A61818] animate-ping"></span>

@@ -39,30 +39,21 @@ export default function Header({ title = "LifeStream", showBack = true }) {
   const isProfile = location.pathname === '/profile';
 
   return (
-    <header className="w-full bg-white/90 backdrop-blur-lg border-b border-slate-100 sticky top-0 z-50 transition-all shadow-[0_4px_20px_rgb(0,0,0,0.02)]">
+    <header className="w-full bg-white  border-slate-100 sticky top-0 z-50 transition-all shadow-[0_4px_20px_rgb(0,0,0,0.02)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-4">
 
-        {/* Left Section: Brand Logo & Title */}
-        <div className="flex items-center gap-3">
-          <Link to="/" className="flex items-center gap-3 group cursor-pointer select-none" onClick={() => setMobileMenuOpen(false)}>
-            {/* Animated Drop Logo */}
-            <div className="relative flex items-center justify-center w-10 h-11 rounded-t-full rounded-b-[50%] bg-gradient-to-b from-[#A61818] to-[#970707] shadow-lg shadow-[#A61818]/20 transition-transform duration-300 group-hover:scale-105">
-              <div className="w-3 h-3 bg-white/40 rounded-full mb-3"></div>
-              <span className="absolute -bottom-0.5 -right-0.5 flex h-3 w-3">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-3 w-3 bg-red-500 border-2 border-white"></span>
-              </span>
-            </div>
-
-            {/* Typography */}
-            <div className="flex flex-col justify-center">
-              <span className="text-2xl font-black tracking-tight text-[#26282C] leading-none">
-                Life<span className="text-[#A61818]">Stream</span>
-              </span>
-              <span className="text-[10px] font-bold tracking-widest text-slate-400 uppercase mt-1">
-                Donor Network
-              </span>
-            </div>
+        {/* Left Section: Brand Logo */}
+        <div className="flex items-center">
+          <Link
+            to="/"
+            className="flex items-center group cursor-pointer select-none"
+            onClick={() => setMobileMenuOpen(false)}
+          >
+            <img
+              src="/logo.png"
+              alt="LifeStream - Donate Blood, Save Lives"
+              className="h-20 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
           </Link>
         </div>
 
