@@ -13,12 +13,6 @@ import { toast } from '../components/Toast';
 import WelcomeModal from '../components/WelcomeModal';
 
 const DEFAULT_DONORS = [
-  { id: 1, name: 'Asim Raza', bloodGroup: 'O+', address: 'Sillanwali Road, Hussain Chowk, Sargodha', phone: '0300 - 1234567', lastDonationDate: '2026-08-10', isAvailable: true },
-  { id: 2, name: 'Zeeshan Haider', bloodGroup: 'A+', address: 'University Road, Sargodha', phone: '0301 - 9876543', lastDonationDate: '2026-07-01', isAvailable: true },
-  { id: 3, name: 'Usman Ali', bloodGroup: 'B+', address: 'Lahore Road, Sargodha', phone: '0302 - 5554433', lastDonationDate: '2025-11-15', isAvailable: false },
-  { id: 4, name: 'Bilal Ahmed', bloodGroup: 'AB+', address: 'Club Road, Sargodha', phone: '0303 - 7788990', lastDonationDate: '2025-10-10', isAvailable: true },
-  { id: 5, name: 'Hamza Malik', bloodGroup: 'O-', address: 'Satellite Town, Sargodha', phone: '0304 - 1122334', lastDonationDate: '2026-04-12', isAvailable: true },
-  { id: 6, name: 'Tariq Mehmood', bloodGroup: 'A-', address: 'Civil Lines, Sargodha', phone: '0305 - 6677889', lastDonationDate: '2026-08-25', isAvailable: true }
 ];
 
 export default function Home() {
@@ -34,115 +28,23 @@ export default function Home() {
   const [showDetailModal, setShowDetailModal] = useState(false);
   const [copiedPhone, setCopiedPhone] = useState(false);
 
-
   const educationalSlides = [
-    {
-      id: 1,
-      badge: "Divine Guidance",
-      quote: "“And whoever saves one — it is as if he had saved mankind entirely.”",
-      reference: "— Al-Quran (Surah Al-Ma'idah, 5:32)",
-      bg: "bg-gradient-to-r from-[#1d3557] to-[#0f172a]"
-    },
-    {
-      id: 2,
-      badge: "Prophetic Tradition",
-      quote: "“The most beloved of people to Allah are those who are most beneficial to people.”",
-      reference: "— Al-Mu'jam Al-Awsat (Hadith)",
-      bg: "bg-gradient-to-r from-[#e63946] to-[#b71c1c]"
-    },
-    {
-      id: 3,
-      badge: "Community Duty",
-      quote: "“Help you one another in righteousness and piety, but do not help one another in sin and aggression.”",
-      reference: "— Al-Quran (Surah Al-Ma'idah, 5:2)",
-      bg: "bg-gradient-to-r from-[#0f172a] to-[#1e293b]"
-    },
-    {
-      id: 4,
-      badge: "The Power of Charity",
-      quote: "“Charity does not decrease wealth.”",
-      reference: "— Sahih Muslim, 2588",
-      bg: "bg-gradient-to-r from-[#065f46] to-[#022c22]"
-    },
-    {
-      id: 5,
-      badge: "Kindness to Others",
-      quote: "“Whoever is not merciful to people, Allah will not be merciful to him.”",
-      reference: "— Sahih al-Bukhari, 7376; Sahih Muslim, 2319",
-      bg: "bg-gradient-to-r from-[#7c2d12] to-[#431407]"
-    },
-    {
-      id: 6,
-      badge: "A Lifeline of Hope",
-      quote: "“And whoever saves a life, it is as if he had saved all of mankind.”",
-      reference: "— Al-Quran (Surah Al-Ma'idah, 5:32)",
-      bg: "bg-gradient-to-r from-[#155e75] to-[#082f49]"
-    },
-    {
-      id: 7,
-      badge: "The Reward of Giving",
-      quote: "“The example of those who spend their wealth in the way of Allah is like a seed that grows seven ears; in every ear there are a hundred grains.”",
-      reference: "— Al-Quran (Surah Al-Baqarah, 2:261)",
-      bg: "bg-gradient-to-r from-[#854d0e] to-[#422006]"
-    },
-    {
-      id: 8,
-      badge: "Care for the Needy",
-      quote: "“So as for the orphan, do not oppress him. And as for the petitioner, do not repel him.”",
-      reference: "— Al-Quran (Surah Ad-Duha, 93:9–10)",
-      bg: "bg-gradient-to-r from-[#6b21a8] to-[#3b0764]"
-    },
-    {
-      id: 9,
-      badge: "A Small Act, Great Reward",
-      quote: "“Do not belittle any good deed, even meeting your brother with a cheerful face.”",
-      reference: "— Sahih Muslim, 2626",
-      bg: "bg-gradient-to-r from-[#be123c] to-[#4c0519]"
-    },
-    {
-      id: 10,
-      badge: "Faith Through Action",
-      quote: "“Righteousness is in one who believes in Allah, the Last Day, the angels, the Book, and the prophets, and gives wealth, in spite of love for it, to relatives, orphans, the needy, and the traveler.”",
-      reference: "— Al-Quran (Surah Al-Baqarah, 2:177)",
-      bg: "bg-gradient-to-r from-[#166534] to-[#052e16]"
-    },
-    {
-      id: 11,
-      badge: "The Gift of Water",
-      quote: "“The best charity is giving water to drink.”",
-      reference: "— Sunan Abi Dawud, 1679",
-      bg: "bg-gradient-to-r from-[#0369a1] to-[#172554]"
-    },
-    {
-      id: 12,
-      badge: "Compassion for Humanity",
-      quote: "“And they give food in spite of love for it to the needy, the orphan, and the captive.”",
-      reference: "— Al-Quran (Surah Al-Insan, 76:8)",
-      bg: "bg-gradient-to-r from-[#9a3412] to-[#431407]"
-    },
-    {
-      id: 13,
-      badge: "Unity in Goodness",
-      quote: "“The believers are but brothers, so make settlement between your brothers.”",
-      reference: "— Al-Quran (Surah Al-Hujurat, 49:10)",
-      bg: "bg-gradient-to-r from-[#4338ca] to-[#1e1b4b]"
-    },
-    {
-      id: 14,
-      badge: "Sincerity in Giving",
-      quote: "“You will never attain righteousness until you spend from that which you love.”",
-      reference: "— Al-Quran (Surah Aal-e-Imran, 3:92)",
-      bg: "bg-gradient-to-r from-[#a16207] to-[#292524]"
-    },
-    {
-      id: 15,
-      badge: "Be a Source of Ease",
-      quote: "“Whoever relieves a believer of a hardship from the hardships of this world, Allah will relieve him of a hardship from the hardships of the Day of Resurrection.”",
-      reference: "— Sahih Muslim, 2699",
-      bg: "bg-gradient-to-r from-[#0f766e] to-[#134e4a]"
-    }
+    { id: 1, badge: "Divine Guidance", quote: "“And whoever saves one — it is as if he had saved mankind entirely.”", reference: "— Al-Quran (Surah Al-Ma'idah, 5:32)", bg: "bg-gradient-to-r from-[#1d3557] to-[#0f172a]" },
+    { id: 2, badge: "Prophetic Tradition", quote: "“The most beloved of people to Allah are those who are most beneficial to people.”", reference: "— Al-Mu'jam Al-Awsat (Hadith)", bg: "bg-gradient-to-r from-[#e63946] to-[#b71c1c]" },
+    { id: 3, badge: "Community Duty", quote: "“Help you one another in righteousness and piety, but do not help one another in sin and aggression.”", reference: "— Al-Quran (Surah Al-Ma'idah, 5:2)", bg: "bg-gradient-to-r from-[#0f172a] to-[#1e293b]" },
+    { id: 4, badge: "The Power of Charity", quote: "“Charity does not decrease wealth.”", reference: "— Sahih Muslim, 2588", bg: "bg-gradient-to-r from-[#065f46] to-[#022c22]" },
+    { id: 5, badge: "Kindness to Others", quote: "“Whoever is not merciful to people, Allah will not be merciful to him.”", reference: "— Sahih al-Bukhari, 7376; Sahih Muslim, 2319", bg: "bg-gradient-to-r from-[#7c2d12] to-[#431407]" },
+    { id: 6, badge: "A Lifeline of Hope", quote: "“And whoever saves a life, it is as if he had saved all of mankind.”", reference: "— Al-Quran (Surah Al-Ma'idah, 5:32)", bg: "bg-gradient-to-r from-[#155e75] to-[#082f49]" },
+    { id: 7, badge: "The Reward of Giving", quote: "“The example of those who spend their wealth in the way of Allah is like a seed that grows seven ears; in every ear there are a hundred grains.”", reference: "— Al-Quran (Surah Al-Baqarah, 2:261)", bg: "bg-gradient-to-r from-[#854d0e] to-[#422006]" },
+    { id: 8, badge: "Care for the Needy", quote: "“So as for the orphan, do not oppress him. And as for the petitioner, do not repel him.”", reference: "— Al-Quran (Surah Ad-Duha, 93:9–10)", bg: "bg-gradient-to-r from-[#6b21a8] to-[#3b0764]" },
+    { id: 9, badge: "A Small Act, Great Reward", quote: "“Do not belittle any good deed, even meeting your brother with a cheerful face.”", reference: "— Sahih Muslim, 2626", bg: "bg-gradient-to-r from-[#be123c] to-[#4c0519]" },
+    { id: 10, badge: "Faith Through Action", quote: "“Righteousness is in one who believes in Allah, the Last Day, the angels, the Book, and the prophets, and gives wealth, in spite of love for it, to relatives, orphans, the needy, and the traveler.”", reference: "— Al-Quran (Surah Al-Baqarah, 2:177)", bg: "bg-gradient-to-r from-[#166534] to-[#052e16]" },
+    { id: 11, badge: "The Gift of Water", quote: "“The best charity is giving water to drink.”", reference: "— Sunan Abi Dawud, 1679", bg: "bg-gradient-to-r from-[#0369a1] to-[#172554]" },
+    { id: 12, badge: "Compassion for Humanity", quote: "“And they give food in spite of love for it to the needy, the orphan, and the captive.”", reference: "— Al-Quran (Surah Al-Insan, 76:8)", bg: "bg-gradient-to-r from-[#9a3412] to-[#431407]" },
+    { id: 13, badge: "Unity in Goodness", quote: "“The believers are but brothers, so make settlement between your brothers.”", reference: "— Al-Quran (Surah Al-Hujurat, 49:10)", bg: "bg-gradient-to-r from-[#4338ca] to-[#1e1b4b]" },
+    { id: 14, badge: "Sincerity in Giving", quote: "“You will never attain righteousness until you spend from that which you love.”", reference: "— Al-Quran (Surah Aal-e-Imran, 3:92)", bg: "bg-gradient-to-r from-[#a16207] to-[#292524]" },
+    { id: 15, badge: "Be a Source of Ease", quote: "“Whoever relieves a believer of a hardship from the hardships of this world, Allah will relieve him of a hardship from the hardships of the Day of Resurrection.”", reference: "— Sahih Muslim, 2699", bg: "bg-gradient-to-r from-[#0f766e] to-[#134e4a]" }
   ];
-
 
   const checkCooldownActive = useCallback((lastDateStr) => {
     if (!lastDateStr) return false;
@@ -205,8 +107,6 @@ export default function Home() {
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#e63946] mb-5">
               Donors & Communities
             </h1>
-
-            {/* Added Meta Content / Paragraph Area */}
             <p className="text-base md:text-lg text-slate-500 font-medium max-w-2xl mx-auto mb-5 leading-relaxed">
               Connect with local heroes in your area. Browse verified profiles, check 60-day recovery statuses, and reach out instantly to save a life today.
             </p>
@@ -217,8 +117,6 @@ export default function Home() {
               <span className="w-1 h-1 rounded-full bg-slate-300 hidden sm:block"></span>
               <span className="flex items-center gap-1.5"><span className="w-2 h-2 rounded-full bg-blue-500"></span> Direct WhatsApp</span>
             </div>
-            {/* End Meta Content */}
-
           </div>
 
           <div className="w-full bg-white rounded-[40px] shadow-[0_8px_30px_rgb(0,0,0,0.06)] border border-slate-100 p-2.5 flex flex-col md:flex-row items-center gap-2 relative z-20">
@@ -422,6 +320,46 @@ export default function Home() {
           </div>
         )}
       </main>
+
+      {/* ABOUT SECTION (Modeled after image_3d05de.jpg) */}
+      <section className="w-full bg-white py-16 md:py-24 px-4 sm:px-6 lg:px-8 border-t border-slate-200 mt-16">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+          {/* Left Column: Text Content */}
+          <div className="flex flex-col gap-5 lg:pr-4">
+            <span className="text-[11px] font-semibold tracking-[0.15em] text-slate-400 uppercase">
+              Who We Are
+            </span>
+
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] tracking-tight mb-2">
+              About LifeStream
+            </h2>
+
+            <p className="text-slate-500 font-medium leading-relaxed text-sm md:text-base mb-4">
+              At LifeStream, we believe saving lives begins with better connections. We bring together carefully verified blood donors and patients in need from across the community. Pure intentions. Trusted profiles. Faster responses. From emergency blood requests to routine community support, our platform is built with a focus on reliability, accessibility, and human goodness. Our goal is simple — to make it easier for you to discover ready donors, coordinate with confidence, and connect with individuals who support a healthier, stronger community.
+            </p>
+
+            <div>
+              <Link
+                to="/about"
+                className="inline-flex justify-center items-center bg-[#0f172a] hover:bg-black text-white text-sm font-semibold px-8 py-3.5 transition-colors duration-200"
+              >
+                About Us
+              </Link>
+            </div>
+          </div>
+
+          {/* Right Column: Image */}
+          <div className="w-full h-[400px] lg:h-[550px] relative overflow-hidden bg-slate-100 rounded-2xl shadow-inner">
+            <img
+              src="https://images.unsplash.com/photo-1615461066841-6116e61058f4?auto=format&fit=crop&q=80"
+              alt="LifeStream Community"
+              className="w-full h-full object-cover object-center"
+            />
+          </div>
+
+        </div>
+      </section>
 
       {/* DETAIL MODAL */}
       {showDetailModal && selectedDonor && (

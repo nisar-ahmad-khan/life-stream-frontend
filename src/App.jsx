@@ -11,6 +11,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Account from './pages/Profile';
 import ToastContainer from './components/Toast';
+import About from './pages/about';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -18,14 +19,15 @@ function App() {
   return (
     <>
       <ToastContainer />
-      <Header/>
+      <Header />
       <Routes>
-        <Route path='/sign-up/' element={<Registration/>}/>
-        <Route path="/sign-in" element={<Signin/>}/>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/profile' element={<Account/>}/>
+        <Route path='/sign-up/' element={<Registration />} />
+        <Route path="/sign-in" element={<Signin />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/profile' element={<Account />} />
+        <Route path="/about/" element={<About />} />
       </Routes>
-      <Footer/>
+      <Footer />
     </>
   )
 }
