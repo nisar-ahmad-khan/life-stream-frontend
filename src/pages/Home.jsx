@@ -105,7 +105,7 @@ export default function Home() {
           <div className="w-full max-w-4xl text-center mb-10 flex flex-col items-center animate-in fade-in zoom-in duration-500">
             <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white border border-red-100 shadow-sm text-xs font-bold text-[#e63946] mb-6">
               <svg className="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z" /></svg>
-              LifeStream, the smarter way
+              Hits different when you save a life.
             </span>
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-tight text-[#0f172a] mb-2">
               Discover Lifesaving
