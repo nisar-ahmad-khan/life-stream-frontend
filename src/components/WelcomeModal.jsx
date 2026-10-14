@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 
-// Bumped version so the modal pops up again for you to see the new DNA animation
-const STORAGE_KEY = 'lifestream_welcome_seen_v2';
+// Bumped version so the modal pops up again for you to see the refreshed DNA animation
+const STORAGE_KEY = 'lifestream_welcome_seen_v3';
 
 const slides = [
   {
@@ -43,6 +43,9 @@ function buildScene(canvas) {
   const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
   renderer.setSize(W, H);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.toneMapping = THREE.ACESFilmicToneMapping;
+  renderer.toneMappingExposure = 1.15;
 
   const scene = new THREE.Scene();
   // Adjust camera to view the full vertical strand
@@ -50,26 +53,54 @@ function buildScene(canvas) {
   camera.position.z = 16;
   camera.position.y = 0;
 
-  // Lighting to enhance the 3D depth of the DNA
-  scene.add(new THREE.AmbientLight(0xffffff, 0.5));
-  const light1 = new THREE.PointLight(0xffffff, 1.5, 50);
-  light1.position.set(5, 10, 5);
-  scene.add(light1);
-  const light2 = new THREE.PointLight(0xA61818, 2.5, 50);
-  light2.position.set(-5, -5, 5);
-  scene.add(light2);
+  // Sharp, balanced lighting to make colors rich and high-contrast
+  scene.add(new THREE.AmbientLight(0xffffff, 0.75));
+
+  // Key light: bright crisp white light from upper right
+  const keyLight = new THREE.DirectionalLight(0xffffff, 1.8);
+  keyLight.position.set(6, 8, 8);
+  scene.add(keyLight);
+
+  // Vibrant saturated crimson fill/rim light from left
+  const redRimLight = new THREE.PointLight(0xFF1744, 3.5, 40);
+  redRimLight.position.set(-6, -4, 6);
+  scene.add(redRimLight);
+
+  // Crisp cool rim light from top-back to create a sharp edge contour
+  const edgeLight = new THREE.PointLight(0xB0D4FF, 1.8, 35);
+  edgeLight.position.set(2, 8, -6);
+  scene.add(edgeLight);
 
   // Group to hold the entire DNA structure
   const dnaGroup = new THREE.Group();
   scene.add(dnaGroup);
 
-  // Geometries and Materials for DNA components
-  const sphereGeo = new THREE.SphereGeometry(0.35, 32, 32);
-  const rungGeo = new THREE.CylinderGeometry(0.06, 0.06, 4, 16);
+  // Geometries and Materials for DNA components with sharp, vivid colors & highlights
+  const sphereGeo = new THREE.SphereGeometry(0.36, 32, 32);
+  const rungGeo = new THREE.CylinderGeometry(0.065, 0.065, 4, 16);
 
-  const matStrand1 = new THREE.MeshPhongMaterial({ color: 0xA61818, emissive: 0x300000, shininess: 80 }); // Primary Red
-  const matStrand2 = new THREE.MeshPhongMaterial({ color: 0xe2e8f0, emissive: 0x111111, shininess: 80 }); // Bright contrasting strand
-  const matRung = new THREE.MeshPhongMaterial({ color: 0x970707, transparent: true, opacity: 0.6 });      // Dark Red connections
+  const matStrand1 = new THREE.MeshPhongMaterial({
+    color: 0xFF1744,         // Vivid, punchy crimson red
+    emissive: 0x550010,      // Radiant inner glow so it never gets muddy
+    specular: 0xFFA5B4,      // Sharp specular glint
+    shininess: 95,
+  });
+
+  const matStrand2 = new THREE.MeshPhongMaterial({
+    color: 0xFFFFFF,         // Brilliant crisp white
+    emissive: 0x222B38,      // Crisp subtle luminescence
+    specular: 0xFFFFFF,      // Sharp diamond-white specular shine
+    shininess: 110,
+  });
+
+  const matRung = new THREE.MeshPhongMaterial({
+    color: 0xFF2D55,         // Vibrant ruby red rung
+    emissive: 0x6E0018,      // Glowing core
+    specular: 0xFFA0B5,
+    shininess: 85,
+    transparent: true,
+    opacity: 0.85,
+  });
 
   const numBasePairs = 30;
   const radius = 2;
@@ -112,7 +143,12 @@ function buildScene(canvas) {
   }
   const geoP = new THREE.BufferGeometry();
   geoP.setAttribute('position', new THREE.BufferAttribute(pos, 3));
-  const matP = new THREE.PointsMaterial({ color: 0xA61818, size: 0.15, transparent: true, opacity: 0.6 });
+  const matP = new THREE.PointsMaterial({
+    color: 0xFF2D55,
+    size: 0.18,
+    transparent: true,
+    opacity: 0.85,
+  });
   const particles = new THREE.Points(geoP, matP);
   scene.add(particles);
 
@@ -238,9 +274,9 @@ export default function WelcomeModal() {
         .wm-card.wm-out{animation:wm-sd .42s cubic-bezier(.4,0,1,1) both}
         @keyframes wm-su{from{opacity:0;transform:translateY(44px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
         @keyframes wm-sd{from{opacity:1;transform:translateY(0) scale(1)}to{opacity:0;transform:translateY(30px) scale(.97)}}
-        .wm-left{position:relative;width:44%;min-height:440px;background:#1A1C1F;flex-shrink:0;overflow:hidden}
+        .wm-left{position:relative;width:44%;min-height:440px;background:radial-gradient(ellipse at 50% 50%, #221016 0%, #141518 68%, #0d0e10 100%);flex-shrink:0;overflow:hidden}
         .wm-left canvas{display:block;width:100%!important;height:100%!important;position:absolute;inset:0}
-        .wm-left-label{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.3);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;z-index:2;pointer-events:none}
+        .wm-left-label{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.4);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;z-index:2;pointer-events:none;text-shadow:0 1px 3px rgba(0,0,0,.8)}
         .wm-right{flex:1;background:linear-gradient(145deg,#26282C 0%,#1c1d21 60%,#151619 100%);padding:42px 36px 32px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
         .wm-right::before{content:'';position:absolute;top:-55px;right:-55px;width:190px;height:190px;background:radial-gradient(circle,rgba(166,24,24,.32) 0%,transparent 70%);border-radius:50%;pointer-events:none}
         .wm-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(166,24,24,.15);border:1px solid rgba(166,24,24,.3);color:#ff8a8a;border-radius:100px;padding:4px 13px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px;width:fit-content}
