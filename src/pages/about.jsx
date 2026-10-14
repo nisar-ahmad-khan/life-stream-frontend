@@ -71,6 +71,7 @@ const About = () => {
               <img
                 src="https://images.unsplash.com/photo-1536856136534-bb679c52a9aa?auto=format&fit=crop&q=80"
                 alt="Medical community support"
+                loading='eager'
                 className="w-full h-full object-cover"
               />
             </div>
