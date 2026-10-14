@@ -13,6 +13,12 @@ import { toast } from '../components/Toast';
 import WelcomeModal from '../components/WelcomeModal';
 
 const DEFAULT_DONORS = [
+  { id: 1, name: 'Asim Raza', bloodGroup: 'O+', address: 'Sillanwali Road, Hussain Chowk, Sargodha', phone: '0300 - 1234567', lastDonationDate: '2026-08-10', isAvailable: true },
+  { id: 2, name: 'Zeeshan Haider', bloodGroup: 'A+', address: 'University Road, Sargodha', phone: '0301 - 9876543', lastDonationDate: '2026-07-01', isAvailable: true },
+  { id: 3, name: 'Usman Ali', bloodGroup: 'B+', address: 'Lahore Road, Sargodha', phone: '0302 - 5554433', lastDonationDate: '2025-11-15', isAvailable: false },
+  { id: 4, name: 'Bilal Ahmed', bloodGroup: 'AB+', address: 'Club Road, Sargodha', phone: '0303 - 7788990', lastDonationDate: '2025-10-10', isAvailable: true },
+  { id: 5, name: 'Hamza Malik', bloodGroup: 'O-', address: 'Satellite Town, Sargodha', phone: '0304 - 1122334', lastDonationDate: '2026-04-12', isAvailable: true },
+  { id: 6, name: 'Tariq Mehmood', bloodGroup: 'A-', address: 'Civil Lines, Sargodha', phone: '0305 - 6677889', lastDonationDate: '2026-08-25', isAvailable: true }
 ];
 
 export default function Home() {
