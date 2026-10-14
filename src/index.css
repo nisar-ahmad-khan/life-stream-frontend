@@ -132,3 +132,11 @@ body {
   background-color: rgba(230, 57, 70, 0.2);
   color: #e63946;
 }
+
+/* Hide Swiper navigation buttons on mobile screens */
+@media (max-width: 767px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    display: none !important;
+  }
+}

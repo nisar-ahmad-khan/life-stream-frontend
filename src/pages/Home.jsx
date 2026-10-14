@@ -197,10 +197,23 @@ export default function Home() {
             .swiper-wrapper { display: flex !important; align-items: stretch !important; }
             .swiper-slide { display: flex !important; height: auto !important; }
             .swiper-slide > div { width: 100% !important; flex: 1 1 auto !important; }
-            .swiper-button-next, .swiper-button-prev { color: white !important; background: rgba(255,255,255,0.1); backdrop-filter: blur(4px); width: 44px !important; height: 44px !important; border-radius: 50%; transition: all 0.3s ease; opacity: 0; }
-            .group:hover .swiper-button-next, .group:hover .swiper-button-prev { opacity: 1; }
-            .swiper-button-next:hover, .swiper-button-prev:hover { background: rgba(255,255,255,0.25); }
-            .swiper-button-next:after, .swiper-button-prev:after { font-size: 18px !important; font-weight: bold; }
+            .swiper-button-next, .swiper-button-prev { display: none !important; }
+            @media (min-width: 768px) {
+              .swiper-button-next, .swiper-button-prev { 
+                display: flex !important; 
+                color: white !important; 
+                background: rgba(255,255,255,0.1); 
+                backdrop-filter: blur(4px); 
+                width: 44px !important; 
+                height: 44px !important; 
+                border-radius: 50%; 
+                transition: all 0.3s ease; 
+                opacity: 0; 
+              }
+              .group:hover .swiper-button-next, .group:hover .swiper-button-prev { opacity: 1; }
+              .swiper-button-next:hover, .swiper-button-prev:hover { background: rgba(255,255,255,0.25); }
+              .swiper-button-next:after, .swiper-button-prev:after { font-size: 18px !important; font-weight: bold; }
+            }
             .swiper-pagination { bottom: 18px !important; }
             .swiper-pagination-bullet { background: white !important; opacity: 0.5; }
             .swiper-pagination-bullet-active { opacity: 1; }
