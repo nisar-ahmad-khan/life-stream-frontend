@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 
 // Bumped version so the modal pops up again for you to see the refreshed DNA animation
-const STORAGE_KEY = 'lifestream_welcome_seen_v3';
+const STORAGE_KEY = 'lifestream_welcome_seen_v4';
 
 const slides = [
   {
@@ -38,7 +38,7 @@ const slides = [
 /* ── Three.js scene: 3D DNA Helix ───────────────────────────────────────── */
 function buildScene(canvas) {
   const W = canvas.clientWidth || 400;
-  const H = canvas.clientHeight || 440;
+  const H = canvas.clientHeight || 490;
 
   const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
   renderer.setSize(W, H);
@@ -270,23 +270,24 @@ export default function WelcomeModal() {
         .wm-overlay.wm-out{animation:wm-fo .44s ease both}
         @keyframes wm-fi{from{opacity:0}to{opacity:1}}
         @keyframes wm-fo{from{opacity:1}to{opacity:0}}
-        .wm-card{position:relative;width:min(96vw,860px);min-height:440px;border-radius:28px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.07);animation:wm-su .46s cubic-bezier(.22,1,.36,1) both;display:flex;flex-direction:row}
+        .wm-card{position:relative;width:min(96vw,860px);height:500px;min-height:500px;border-radius:28px;overflow:hidden;box-shadow:0 40px 100px rgba(0,0,0,.6),0 0 0 1px rgba(255,255,255,.07);animation:wm-su .46s cubic-bezier(.22,1,.36,1) both;display:flex;flex-direction:row}
         .wm-card.wm-out{animation:wm-sd .42s cubic-bezier(.4,0,1,1) both}
         @keyframes wm-su{from{opacity:0;transform:translateY(44px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
         @keyframes wm-sd{from{opacity:1;transform:translateY(0) scale(1)}to{opacity:0;transform:translateY(30px) scale(.97)}}
-        .wm-left{position:relative;width:44%;min-height:440px;background:radial-gradient(ellipse at 50% 50%, #221016 0%, #141518 68%, #0d0e10 100%);flex-shrink:0;overflow:hidden}
+        .wm-left{position:relative;width:44%;height:100%;min-height:500px;background:radial-gradient(ellipse at 50% 50%, #221016 0%, #141518 68%, #0d0e10 100%);flex-shrink:0;overflow:hidden}
         .wm-left canvas{display:block;width:100%!important;height:100%!important;position:absolute;inset:0}
         .wm-left-label{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.4);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;z-index:2;pointer-events:none;text-shadow:0 1px 3px rgba(0,0,0,.8)}
-        .wm-right{flex:1;background:linear-gradient(145deg,#26282C 0%,#1c1d21 60%,#151619 100%);padding:42px 36px 32px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+        .wm-right{flex:1;height:100%;background:linear-gradient(145deg,#26282C 0%,#1c1d21 60%,#151619 100%);padding:38px 36px 28px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-sizing:border-box}
         .wm-right::before{content:'';position:absolute;top:-55px;right:-55px;width:190px;height:190px;background:radial-gradient(circle,rgba(166,24,24,.32) 0%,transparent 70%);border-radius:50%;pointer-events:none}
-        .wm-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(166,24,24,.15);border:1px solid rgba(166,24,24,.3);color:#ff8a8a;border-radius:100px;padding:4px 13px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:14px;width:fit-content}
+        .wm-slide-content{flex:1;display:flex;flex-direction:column;justify-content:center}
+        .wm-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(166,24,24,.15);border:1px solid rgba(166,24,24,.3);color:#ff8a8a;border-radius:100px;padding:4px 13px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;width:fit-content}
         .wm-dot-pulse{width:6px;height:6px;border-radius:50%;background:#A61818;animation:wm-blink 1.4s infinite}
         @keyframes wm-blink{0%,100%{opacity:1}50%{opacity:.2}}
-        .wm-icon{font-size:40px;display:block;margin-bottom:10px;animation:wm-bob 2.4s ease-in-out infinite}
+        .wm-icon{font-size:38px;display:block;margin-bottom:8px;animation:wm-bob 2.4s ease-in-out infinite}
         @keyframes wm-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
-        .wm-headline{font-size:clamp(1.45rem,3vw,2.05rem);font-weight:900;line-height:1.17;color:#fff;margin-bottom:13px;white-space:pre-line}
-        .wm-sub{font-size:.875rem;color:rgba(255,255,255,.62);line-height:1.68;margin-bottom:28px;max-width:360px}
-        .wm-cta{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(135deg,#A61818,#970707);color:#fff;border:none;border-radius:100px;padding:12px 26px;font-size:.875rem;font-weight:700;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 6px 24px rgba(166,24,24,.4);margin-bottom:24px;font-family:'Inter',sans-serif}
+        .wm-headline{font-size:clamp(1.45rem,3vw,2.05rem);font-weight:900;line-height:1.18;color:#fff;margin-bottom:10px;white-space:pre-line;min-height:2.4em}
+        .wm-sub{font-size:.875rem;color:rgba(255,255,255,.62);line-height:1.68;margin-bottom:22px;max-width:370px;min-height:48px}
+        .wm-cta{display:inline-flex;align-items:center;gap:9px;background:linear-gradient(135deg,#A61818,#970707);color:#fff;border:none;border-radius:100px;padding:12px 26px;font-size:.875rem;font-weight:700;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 6px 24px rgba(166,24,24,.4);width:fit-content;font-family:'Inter',sans-serif}
         .wm-cta:hover{transform:translateY(-2px);box-shadow:0 10px 34px rgba(166,24,24,.6)}
         .wm-cta:active{transform:scale(.97)}
         .wm-dots{display:flex;gap:8px;align-items:center}
@@ -295,10 +296,16 @@ export default function WelcomeModal() {
         .wm-progress{position:absolute;bottom:0;left:0;height:3px;background:linear-gradient(90deg,#A61818,#970707);transition:width .05s linear}
         .wm-close{position:absolute;top:16px;right:16px;width:32px;height:32px;border-radius:50%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.11);color:rgba(255,255,255,.55);font-size:15px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s,color .2s;z-index:10}
         .wm-close:hover{background:rgba(166,24,24,.3);color:#fff}
-        .wm-bottom{display:flex;align-items:center;justify-content:space-between}
+        .wm-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:12px}
         .wm-skip{font-size:.72rem;color:rgba(255,255,255,.33);cursor:pointer;background:none;border:none;padding:0;transition:color .2s;text-decoration:underline dotted;font-family:'Inter',sans-serif}
         .wm-skip:hover{color:rgba(255,255,255,.65)}
-        @media(max-width:600px){.wm-card{flex-direction:column;min-height:0}.wm-left{width:100%;min-height:200px}.wm-right{padding:26px 20px 22px}}
+        @media(max-width:600px){
+          .wm-card{flex-direction:column;height:auto;min-height:580px}
+          .wm-left{width:100%;height:190px;min-height:190px}
+          .wm-right{height:auto;min-height:390px;padding:26px 20px 22px}
+          .wm-headline{min-height:auto}
+          .wm-sub{min-height:auto}
+        }
       `}</style>
 
       <div className={`wm-overlay${closing ? ' wm-out' : ''}`} onClick={e => e.target === e.currentTarget && dismiss()}>
@@ -314,7 +321,7 @@ export default function WelcomeModal() {
           <div className="wm-right">
             <button className="wm-close" onClick={dismiss} aria-label="Close welcome">✕</button>
 
-            <div>
+            <div className="wm-slide-content">
               <div className="wm-tag">
                 <span className="wm-dot-pulse" />
                 {cur.tag}
