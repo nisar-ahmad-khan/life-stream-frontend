@@ -379,7 +379,7 @@ export default function Registration() {
             <label className="flex items-start gap-3 p-4 bg-slate-50 border border-slate-200 rounded-2xl cursor-pointer hover:bg-slate-100 transition-colors">
               <input type="checkbox" name="health_generalEligible" checked={formData.healthStatus.generalEligible} onChange={handleInputChange} required className="w-5 h-5 rounded border-slate-300 text-[#e63946] focus:ring-[#e63946] mt-0.5 shrink-0 cursor-pointer" />
               <span className="text-sm font-medium text-slate-700 leading-relaxed">
-                I confirm that I am between <strong className="text-slate-900">18–65 years old</strong>, weigh at least <strong className="text-slate-900">50 kg</strong>, have no active fever or transmissible blood infections, and voluntarily register as a life-saving donor.
+                I confirm that I am between <strong className="text-slate-900">18–45 years old</strong>, weigh at least <strong className="text-slate-900">50 kg</strong>, have no active fever or transmissible blood infections, and voluntarily register as a life-saving donor.
               </span>
             </label>
           </section>
