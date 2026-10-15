@@ -1,33 +1,65 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
-
 // Bumped version so the modal pops up again for you to see the refreshed DNA animation
-const STORAGE_KEY = 'lifestream_welcome_seen_v4';
+const STORAGE_KEY = 'lifestream_welcome_seen_v5';
+
+/* ── Crisp Lucide-style SVG Icons ────────────────────────────────────────── */
+const Droplet = ({ size = 32, ...props }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7z" />
+  </svg>
+);
+
+const HeartHandshake = ({ size = 32, ...props }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+    <path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08v0c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66" />
+    <path d="m18 15-2-2" />
+    <path d="m15 18-2-2" />
+  </svg>
+);
+
+const PhoneCall = ({ size = 32, ...props }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+    <path d="M14.05 2a9 9 0 0 1 8 7.94" />
+    <path d="M14.05 6A5 5 0 0 1 18 10" />
+  </svg>
+);
+
+const Users = ({ size = 32, ...props }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" {...props}>
+    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+    <circle cx="9" cy="7" r="4" />
+    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+  </svg>
+);
 
 const slides = [
   {
-    icon: '🩸',
+    icon: Droplet,
     headline: 'Every Drop\nCounts',
     sub: "One donation can save up to 3 lives. You have the power to be someone's miracle today.",
     cta: 'I Want to Donate',
     tag: 'For Donors',
   },
   {
-    icon: '❤️',
+    icon: HeartHandshake,
     headline: '"Whoever saves\none life…"',
     sub: '"…it is as if he had saved all of mankind." — Al-Quran (5:32). Your blood is a gift — share it.',
     cta: 'Be the Hero',
     tag: 'Divine Reward',
   },
   {
-    icon: '🌟',
+    icon: PhoneCall,
     headline: 'Hope is Just\nOne Call Away',
     sub: 'If you or a loved one needs blood, LifeStream connects you with verified local donors in seconds.',
     cta: 'Find a Donor',
     tag: 'For Seekers',
   },
   {
-    icon: '🤝',
+    icon: Users,
     headline: 'Join Thousands\nof Life-Savers',
     sub: 'Our growing community of heroes donates regularly. Register today and let your blood type save a stranger.',
     cta: 'Join the Community',
@@ -261,6 +293,7 @@ export default function WelcomeModal() {
 
   if (!visible) return null;
   const cur = slides[slide];
+  const Icon = cur.icon;
 
   return (
     <>
@@ -279,11 +312,11 @@ export default function WelcomeModal() {
         .wm-left-label{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.4);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;z-index:2;pointer-events:none;text-shadow:0 1px 3px rgba(0,0,0,.8)}
         .wm-right{flex:1;height:100%;background:linear-gradient(145deg,#26282C 0%,#1c1d21 60%,#151619 100%);padding:38px 36px 28px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden;box-sizing:border-box}
         .wm-right::before{content:'';position:absolute;top:-55px;right:-55px;width:190px;height:190px;background:radial-gradient(circle,rgba(166,24,24,.32) 0%,transparent 70%);border-radius:50%;pointer-events:none}
-        .wm-slide-content{flex:1;display:flex;flex-direction:column;justify-content:center}
+        .wm-slide-content{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:flex-start}
         .wm-tag{display:inline-flex;align-items:center;gap:6px;background:rgba(166,24,24,.15);border:1px solid rgba(166,24,24,.3);color:#ff8a8a;border-radius:100px;padding:4px 13px;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px;width:fit-content}
         .wm-dot-pulse{width:6px;height:6px;border-radius:50%;background:#A61818;animation:wm-blink 1.4s infinite}
         @keyframes wm-blink{0%,100%{opacity:1}50%{opacity:.2}}
-        .wm-icon{font-size:38px;display:block;margin-bottom:8px;animation:wm-bob 2.4s ease-in-out infinite}
+        .wm-icon{display:inline-flex;align-items:center;justify-content:flex-start;width:fit-content;margin-bottom:12px;color:#FF2A48;filter:drop-shadow(0 2px 8px rgba(255,42,72,0.35));animation:wm-bob 2.4s ease-in-out infinite}
         @keyframes wm-bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
         .wm-headline{font-size:clamp(1.45rem,3vw,2.05rem);font-weight:900;line-height:1.18;color:#fff;margin-bottom:10px;white-space:pre-line;min-height:2.4em}
         .wm-sub{font-size:.875rem;color:rgba(255,255,255,.62);line-height:1.68;margin-bottom:22px;max-width:370px;min-height:48px}
@@ -326,7 +359,7 @@ export default function WelcomeModal() {
                 <span className="wm-dot-pulse" />
                 {cur.tag}
               </div>
-              <span className="wm-icon">{cur.icon}</span>
+              <span className="wm-icon">{Icon ? <Icon size={34} strokeWidth={2.2} /> : null}</span>
               <h2 className="wm-headline">{cur.headline}</h2>
               <p className="wm-sub">{cur.sub}</p>
               <button className="wm-cta" onClick={dismiss}>
