@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import footerLogo from '../assets/footer-logo.png';
 
 export default function Footer({ text = "Are you ready to save lives?", linkText = "Register as a Donor", linkTo = "/sign-up" }) {
   return (
@@ -45,17 +46,15 @@ export default function Footer({ text = "Are you ready to save lives?", linkText
 
           {/* Col 1: Brand Info */}
           <div className="flex flex-col gap-4 md:col-span-1">
-            <div className="flex items-center gap-3">
-              <div className="w-8 h-9 bg-gradient-to-b from-[#A61818] to-[#970707] rounded-t-full rounded-b-[50%] flex items-center justify-center shadow-lg shadow-[#A61818]/20">
-                <div className="w-2.5 h-2.5 bg-white/40 rounded-full mb-1"></div>
-              </div>
-              <span className="text-xl font-black text-white tracking-tight">
-                Life<span className="text-[#A61818]">Stream</span>
-              </span>
-            </div>
-            <p className="text-slate-400 leading-relaxed font-medium text-xs">
-              Connecting voluntary blood donors with patients in urgent need. Built to empower communities with fast, life-saving blood access.
-            </p>
+            <Link to="/" className="inline-flex items-center group w-fit">
+              <img
+                src={footerLogo}
+                alt="LifeStream Logo"
+                className="h-18 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              />
+            </Link>
+            <p className="py-[-10px] text-slate-400 leading-relaxed font-medium text-xs">
+              Connecting blood donors with patients in urgent need, saving lives through community support.            </p>
           </div>
 
           {/* Col 2: Navigation Links */}
