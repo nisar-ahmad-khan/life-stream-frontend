@@ -54,7 +54,8 @@ export default function Footer({ text = "Are you ready to save lives?", linkText
               />
             </Link>
             <p className="py-[-10px] text-slate-400 leading-relaxed font-medium text-xs">
-              Connecting blood donors with patients in urgent need, saving lives through community support.            </p>
+              Connecting blood donors with patients in need, saving lives together.
+            </p>
           </div>
 
           {/* Col 2: Navigation Links */}
